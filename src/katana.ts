@@ -1,7 +1,8 @@
 import { injectable } from "inversify";
+import { IKatana } from "./interfaces";
 
 @injectable()
-export class Katana {
+export class Katana implements IKatana {
   private readonly sound: string;
 
   constructor(sound: string) {

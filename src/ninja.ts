@@ -1,9 +1,10 @@
 import { injectable } from "inversify";
 import { Katana } from "./Katana";
 import { Shuriken } from "./shuriken";
+import { INinja } from "./interfaces";
 
 @injectable()
-export class Ninja {
+export class Ninja implements INinja {
   private _katana: Katana;
   private _shuriken: Shuriken;
 
