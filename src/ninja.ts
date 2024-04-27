@@ -7,15 +7,16 @@ export class Ninja {
   private _katana: Katana;
   private _shuriken: Shuriken;
 
-  public constructor(katana: Katana, shuriken: Shuriken) {
+  constructor(katana: Katana, shuriken: Shuriken) {
     this._katana = katana;
     this._shuriken = shuriken;
   }
 
-  public fight() {
+  fight() {
     return this._katana.hit();
   }
-  public sneak() {
+
+  sneak() {
     return this._shuriken.throw();
   }
 }
