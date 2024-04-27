@@ -13,5 +13,8 @@
   "dependencies": {
     "inversify": "^6.0.2",
     "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
   }
 }
