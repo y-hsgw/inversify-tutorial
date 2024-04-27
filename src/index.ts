@@ -1,9 +1,10 @@
 import "reflect-metadata";
 import { container } from "./inversify.config";
 import { Ninja } from "./ninja";
+import { TYPES } from "./types";
 
-const samurai = container.resolve(Ninja);
+const ninja = container.get<Ninja>(TYPES.Ninja);
 
-console.log(samurai.fight()); // cut!
-samurai.sneak();
-console.log(samurai.sneak()); // hit!
+console.log(ninja.fight()); // cut!
+ninja.sneak();
+console.log(ninja.sneak()); // hit!

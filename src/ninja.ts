@@ -1,14 +1,16 @@
-import { injectable } from "inversify";
-import { Katana } from "./Katana";
-import { Shuriken } from "./shuriken";
-import { INinja } from "./interfaces";
+import { inject, injectable } from "inversify";
+import { IKatana, INinja, IShuriken } from "./interfaces";
+import { TYPES } from "./types";
 
 @injectable()
 export class Ninja implements INinja {
-  private _katana: Katana;
-  private _shuriken: Shuriken;
+  private _katana: IKatana;
+  private _shuriken: IShuriken;
 
-  constructor(katana: Katana, shuriken: Shuriken) {
+  constructor(
+    @inject(TYPES.Katana) katana: IKatana,
+    @inject(TYPES.Shuriken) shuriken: IShuriken
+  ) {
     this._katana = katana;
     this._shuriken = shuriken;
   }
