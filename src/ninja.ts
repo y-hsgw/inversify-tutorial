@@ -4,16 +4,8 @@ import { TYPES } from "./types";
 
 @injectable()
 export class Ninja implements INinja {
-  private _katana: IKatana;
-  private _shuriken: IShuriken;
-
-  constructor(
-    @inject(TYPES.Katana) katana: IKatana,
-    @inject(TYPES.Shuriken) shuriken: IShuriken
-  ) {
-    this._katana = katana;
-    this._shuriken = shuriken;
-  }
+  @inject(TYPES.Katana) private _katana!: IKatana;
+  @inject(TYPES.Shuriken) private _shuriken!: IShuriken;
 
   fight() {
     return this._katana.hit();
