@@ -4,6 +4,6 @@ import { Katana } from "./Katana";
 import { Shuriken } from "./shuriken";
 
 export const container = new Container();
-container.bind<Ninja>(Ninja).to(Ninja);
-container.bind<Katana>(Katana).to(Katana);
-container.bind<Shuriken>(Shuriken).to(Shuriken);
+container.bind<Ninja>(Ninja).toSelf();
+container.bind<Katana>(Katana).toSelf();
+container.bind<Shuriken>(Shuriken).toSelf();
